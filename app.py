@@ -99,9 +99,13 @@ def view_tasks():
 @app.route('/tasks/<id>', methods=['GET'])
 @jwt_required()
 def view_task(id):
-    task = Tasks.query.get(id)
+    task_query = Tasks.query.get(id)
+    info = {}
+    info["title"] = task_query.title
+    info["task"] = task_query.task
+    info["due_date"] = task_query.due
 
-    return jsonify(msg=task.title), 200
+    return jsonify(msg=info), 200
 
 
 @app.route('/tasks/<id>/update', methods=['PUT'])
@@ -120,6 +124,7 @@ def update_task(id):
         )
 
     db.session.add(task_info)
+    db.session.commit()
     message = "Task {} updated successfully".format(id)
     return jsonify(msg=message), 200
 
@@ -130,6 +135,7 @@ def delete_task(id):
     current_task = Tasks.query.get(id)
 
     db.session.delete(current_task)
+    db.session.commit()
     message = "Task {} deleted successfully".format(id)
     return jsonify(msg=message), 200
 
