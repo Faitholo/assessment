@@ -1,0 +1,10 @@
+Flask
+pyjwt
+flask-jwt-extended
+flask_sqlalchemy
+wtforms
+moment
+python-dotenv
+flask_wtf
+psycopg2
+flask_migrate
