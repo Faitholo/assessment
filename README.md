@@ -1,28 +1,28 @@
 This is a simple task management application that performs CRUD functions.
 If you are not set up on using Python Flask, take the following steps to get started.
 
-Installations
-Go to https://www.python.org/downloads/ to download the latest Python version
-Install Pip, the package installer for Python using the command python get-pip.py for Linux or MacOs and C:> py get-pip.py for Windows
-Install PostgreSQL database and create a database server
-install virtual environment, use the command python3 -m venv .venv for MacOs and py -m venv .venv for Windows.
-If you face any error run the following command below then try the previous command again:
-- virtualenv --system-site-packages -p python ./env
-- Set-ExecutionPolicy Unrestricted -Scope Process
+Installations and setup
+- Go to https://www.python.org/downloads/ to download the latest Python version
+- Install Pip, the package installer for Python using the command python get-pip.py for Linux or MacOs and C:> py get-pip.py for Windows
+- Install PostgreSQL database and create a database server
 
 I provided my virtual environment if you want to run it exactly like I did, otherwise proceed with creating your virtual environment.
-Create a virtual environment python -m venv env
-Enter the environment using the command source env/bin/activate for Linux or MacOs and .\env\Scripts\activate
-After entering the virtual environment, install the dependencies by running pip install -r requirements.txt
-initialise the database using the command flask db init
-Run the migration file to update the database using the command flask db upgrade
+- To install virtual environment, use the command python3 -m venv .venv for MacOs and py -m venv .venv for Windows.
+- If you face any error run the following command below then try the previous command again:
+-- virtualenv --system-site-packages -p python ./env
+-- Set-ExecutionPolicy Unrestricted -Scope Process
+- Create a virtual environment python -m venv env
+- Enter the environment using the command source env/bin/activate for Linux or MacOs and .\env\Scripts\activate
+- After entering the virtual environment, install the dependencies by running pip install -r requirements.txt
+- Initialise the database using the command flask db init
 
+Run the migration file to update the database using the command flask db upgrade
 Run the application using python app.py
 
 ##APIs
 
 SignUp
-Request: POST http://127.0.0.1:5000/signup
+Request: /* POST http://127.0.0.1:5000/signup */
 Json Body:
 {
     "password": "password123",
